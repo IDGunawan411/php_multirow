@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     for($i = 1; $i <= $total_row;$i++){
         $nama = $_POST["nama$i"];
         $alamat = $_POST["alamat$i"];
-        if($_POST["nama$i"]==!NULL){
+        if($_POST["nama$i"]==!NULL && $_POST["alamat$i"]==!NULL){
             mysqli_query($koneksi,"INSERT INTO `biodata` (`id`, `nama`, `alamat`) VALUES (NULL, '$nama', '$alamat')");
         }
     }
