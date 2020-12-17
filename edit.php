@@ -7,8 +7,13 @@
     <div class="card container mt-5">
     <div class="card-header bg-white">Edit Multi Row</div>
     <div class="card-body">
+        <?php include "koneksi.php";
+        $cek = mysqli_query($koneksi,"SELECT * FROM biodata");
+        $c=mysqli_fetch_array($cek);
+        
+        ?>
+        <div><?= $c["id"] == NULL? "Data Tidak Ada" : ""; ?></div>
         <?php
-        include "koneksi.php";
         $srow = mysqli_query($koneksi,"SELECT * FROM biodata");
         $no = 1;
         $no1 = 1;
